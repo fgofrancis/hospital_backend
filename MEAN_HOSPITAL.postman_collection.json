@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "b540dcb6-ecdf-47e2-81ab-4043e160abad",
+		"name": "MEAN_HOSPITAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk5Mjk5MzEsImV4cCI6MTYyOTk3MzEzMX0.ZHxIkZtfvSZWuPC-BJQ9yeqMSLUpH4MKe5mXkbKbl_Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/Usuarios?desde=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Usuarios"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "5"
+						}
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Francis 2\",\r\n    \"password\":\"123456\",\r\n    \"email\":\"fgofrancis013@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Usuarios/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Usuarios",
+						""
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2MzY0NTMsImV4cCI6MTYyOTY3OTY1M30.f1Mlo5kuYTXh5Zhruv0bIpbelkSf5x0Bjql95sgpebo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Francis \",\r\n    \"password\":\"123456\",\r\n    \"email\":\"fgofrancis@gmail.com\",\r\n    \"role\": \"USER_ROLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Usuarios/611d7ef1581f7f3a9884240e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Usuarios",
+						"611d7ef1581f7f3a9884240e"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "dadfa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Usuarios/611d7d27c9883535f4c9aa28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Usuarios",
+						"611d7d27c9883535f4c9aa28"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"123456a\",\r\n      \"email\":\"fgofrancis@gmail.com\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Login Google",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZlZjRiZDkwODU5MWY2OTdhOGE5Yjg5M2IwM2U2YTc3ZWIwNGU1MWYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTE2NjA5MTgxODgxLWRrb2xkZ2Fsa2E4dWRmamgya3Fib3ZrZGw3MmUyMWFmLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTE2NjA5MTgxODgxLWRrb2xkZ2Fsa2E4dWRmamgya3Fib3ZrZGw3MmUyMWFmLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE1MzY5OTYxODA4NTI3MjM2OTkwIiwiZW1haWwiOiJmZ29jYW1AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJfYXN6VGlPY2FtdngxT2V4RzNQU2ZnIiwibmFtZSI6IkZyYW5jaXMgRmlndWVyZW8iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFUWEFKeGY2TFQ4YU0wOWJZckNVZXRFRHNWb0RQV3o5RWk1bHNBalJvVjk9czk2LWMiLCJnaXZlbl9uYW1lIjoiRnJhbmNpcyIsImZhbWlseV9uYW1lIjoiRmlndWVyZW8iLCJsb2NhbGUiOiJlcyIsImlhdCI6MTYyOTkxNDcwNywiZXhwIjoxNjI5OTE4MzA3LCJqdGkiOiI2M2FlNDdkYzg4NDk1MWE0OGZiNWExOTczZDQxNzNkYmRjNWQ2OWU1In0.YkUXh5Tx-Jvknoh66CF0Y70I6hx9rvCBcBHGD6qmEfa5YR4aLMPeyHKxoKW80yQwP9ze3IKTxcy8mcAAIjejEObiqozVnQJpZpgMx6sDw1dXNrwNiHgfOh3_g-JCqzXaBXCRbnghF8kDhPwXejFLv-G5CdFWsPqsgiIcihqCExrcmHi6PownAtObNNEaljReQmPupdoxFE4shYpWphCVAWcja9D0zu27bfZbh-1cL720u7qHe8C-JhAjQkavSjaAXce4PIg-cOYz0ICt95cNadcfpWbDpHRx6SqIiwwHnPH5A906LKR2ux2Ms1-_66orMdS_2-V0-Xff7PBvQxAT8A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login",
+						"google"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Busqueda total",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2NjU3NjgsImV4cCI6MTYyOTcwODk2OH0.swulF4ehLVx6EZRQZRE9jFkQgcMH__RL6E9SKJI_shA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos/hos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"hos"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Subir Archivo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk3MTUzOTgsImV4cCI6MTYyOTc1ODU5OH0.x-FZ6e0RbA9Tq4PEgBKUKpzHxumDdDevJkBIdRo9OKI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/D:/Francis/Cursos/Curso_Udemy/Angular-Avanzado/04-backend-server/imagenes/IMG_E2199.JPG"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/uploads/medicos/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"uploads",
+						"medicos",
+						"123"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Ver imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk3MTUzOTgsImV4cCI6MTYyOTc1ODU5OH0.x-FZ6e0RbA9Tq4PEgBKUKpzHxumDdDevJkBIdRo9OKI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/D:/Francis/Cursos/Curso_Udemy/Angular-Avanzado/04-backend-server/imagenes/IMG_E2199.JPG"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/uploads/hospitales/630f9379-659e-4ee7-8a86-020e13548d7a.JPG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"uploads",
+						"hospitales",
+						"630f9379-659e-4ee7-8a86-020e13548d7a.JPG"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Busqueda por Coleccion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2NjU3NjgsImV4cCI6MTYyOTcwODk2OH0.swulF4ehLVx6EZRQZRE9jFkQgcMH__RL6E9SKJI_shA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/todos/coleccion/hospitales/cent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todos",
+						"coleccion",
+						"hospitales",
+						"cent"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Hospital",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2MzY0NTMsImV4cCI6MTYyOTY3OTY1M30.f1Mlo5kuYTXh5Zhruv0bIpbelkSf5x0Bjql95sgpebo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Centro Medico Home - Santiago\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Hospitales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Hospitales"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hospitales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2MzY0NTMsImV4cCI6MTYyOTY3OTY1M30.f1Mlo5kuYTXh5Zhruv0bIpbelkSf5x0Bjql95sgpebo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Hospitales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Hospitales"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2MzY0NTMsImV4cCI6MTYyOTY3OTY1M30.f1Mlo5kuYTXh5Zhruv0bIpbelkSf5x0Bjql95sgpebo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Medicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Medicos"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Medico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTIyNDc2NWRiMmEyYjNhMzAxN2ZmYTkiLCJpYXQiOjE2Mjk2MzY0NTMsImV4cCI6MTYyOTY3OTY1M30.f1Mlo5kuYTXh5Zhruv0bIpbelkSf5x0Bjql95sgpebo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Dr.Jiminian\",\r\n      \"hospital\": \"61226a807e56a32b50df49ef\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/medicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"medicos"
+					]
+				},
+				"description": "Mi primer peticion "
+			},
+			"response": []
+		}
+	]
+}
