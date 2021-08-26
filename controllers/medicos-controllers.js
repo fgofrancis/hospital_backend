@@ -48,87 +48,75 @@ const creaMedico = async(req, res=response)=>{
 
 const actualizarMedico = async( req, res=response)=>{
 
-     //TODO: Validar token y validar si es el usuario correcto
-     res.json({
-        ok: true,
-        msg: 'actualizarMedico'
+    const id = req.params.id;
+    const uid = req.uid;
+
+    try {
+        const medico = await Medico.findById(id);
+    
+        if (!medico){
+            return res.status(404).json({
+                ok: false,
+                msg: 'Medico no existe por id'
+            });
+        }
+    
+        const cambiosMedico = {
+            ...req.body,
+            usuario: uid
+        }
+    
+        const medicoActualizado = await Medico.findByIdAndUpdate(id, cambiosMedico, { new: true });
+    
+    
+         res.json({
+            ok: true,
+            medico: medicoActualizado
+            
+        })
         
-    })
-    // const uid = req.params.id;
-    // try {
-    //   const hospitalDB = await Hospital.findById(uid);
-
-    //   if (!hospitalDB){
-    //       return res.status(404).json({
-    //           ok: false,
-    //           msg: 'No existe un usuario con ese id'
-    //       });
-    //   }
-
-
-    //   //Actualizaciones
-    //   const {password, google, email, ...campos} = req.body;
-
-    //   if (hospitalDB.email !== email){
-    //       const existeEmail = await Hospital.findOne({ email });
-    //       if (existeEmail ){
-    //           return res.status(400).json({
-    //               ok: false,
-    //               msg:'Ya existe un usuario con ese email'
-    //           });
-    //       }
-    //   }
-    //   campos.email = email;
-    //   const hospitalActulizado = await Hospital.findByIdAndUpdate(uid, campos, {new: true});
-    //      res.json({
-    //         ok: true,
-    //         usuario:hospitalActulizado
-    //     })
-    // } catch (error) {
-    //     console.log(error),
-    //     res.status(500).json({
-    //         ok: 'false',
-    //         msg: 'Error inesperado'
-    //     })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el Administrador'
+        })
         
-    // }
+    }
 
 }
 
 const borrarMedico = async( req, res=response )=>{
 
-    res.json({
-        ok: true,
-        msg: 'borrarMedico'
+    const Id = req.params.id;
+ 
+    try {
+
+        const medico = await Medico.findById(Id);
+
+        if (!medico){
+            return res.status(404).json({
+                ok: false,
+                msg: 'Médico no Encontrado por id'
+            });
+        }
+
+       await Medico.findByIdAndDelete( Id);
+
+        res.json({
+           ok: true,
+           msg: 'Médico Eliminado'
+       })
         
-    });
+    } catch (error) {
+        console.log(error);
 
-    const uid = req.params.id;
-    // try {
-
-    //     const hospitalDB = await Hospital.findById(uid);
-
-    //     if (!hospitalDB){
-    //         return res.status(404).json({
-    //             ok: false,
-    //             msg: 'No existe un hospital con ese id'
-    //         });
-    //     };
-
-    //     await Hospital.findByIdAndDelete(uid);
-
-    //     res.json({
-    //         ok: true,
-    //         msg: 'Hospital eliminado!!'
-    //     })
+        res.status(500).json({
+            ok: false,
+            msg: 'Hable con el Administrador'
+        })
         
-    // } catch (error) {
-    //     console.log(error);
-    //     res.status(500).json({
-    //         ok: false,
-    //         msg: 'Hable con el Administrador'
-    //     })
-    // }
+    }
 }
 
 

@@ -30,10 +30,13 @@
  
      router.put('/:id',
      [
+        validarJWT,
+        check('nombre', 'El nombre del médico es obligatorio').notEmpty(),
+        validarCampos
      ],
      actualizarMedico);
  
-     router.delete('/:id', borrarMedico);
+     router.delete('/:id',validarJWT ,borrarMedico);
  
  module.exports = router;
  
