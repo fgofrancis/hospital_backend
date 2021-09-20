@@ -18,6 +18,29 @@ const { generarJWT } = require('../helpers/jwt');
        // uid : req.uid esto es para compartir informacion en las peticiones. viene del middleware
     })
 }
+const getMedicoById = async(req, res=response)=>{
+
+    const id = req.params.id;
+
+    try {
+        
+        const medico = await Medico.findById(id)
+                                .populate('usuario', 'nombre img')
+                                .populate('hospital','nombre img')
+    
+        res.json({
+            ok: true,
+            medico
+           // uid : req.uid esto es para compartir informacion en las peticiones. viene del middleware
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            ok: true,
+            msg:'Hable con el administrador'
+        })
+    }
+}
 
 const creaMedico = async(req, res=response)=>{
 
@@ -125,4 +148,5 @@ module.exports = {
     creaMedico,
     actualizarMedico,
     borrarMedico,
+    getMedicoById
 }
