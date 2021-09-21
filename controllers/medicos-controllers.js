@@ -80,7 +80,7 @@ const actualizarMedico = async( req, res=response)=>{
         if (!medico){
             return res.status(404).json({
                 ok: false,
-                msg: 'Medico no existe por id'
+                msg: 'Médico no existe por id'
             });
         }
     

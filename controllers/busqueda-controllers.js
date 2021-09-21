@@ -20,7 +20,7 @@ const getTodos = async(req, res = response) =>{
                 Hospital.find({nombre:regexp})
    ]);
 
-   res.status(400).json({
+   res.json({
         ok: true,
         usuarios,
         medicos,
