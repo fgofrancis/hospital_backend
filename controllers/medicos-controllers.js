@@ -140,7 +140,6 @@ const borrarMedico = async( req, res=response )=>{
     }
 }
 
-
 module.exports = {
     getMedicos,
     creaMedico,
