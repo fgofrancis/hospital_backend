@@ -1,8 +1,6 @@
 
 const {response} = require('express');
 const Medico = require('../models/medico');
-const bcrypt = require('bcryptjs');
-const { generarJWT } = require('../helpers/jwt');
 
 
  const getMedicos = async(req, res=response)=>{
